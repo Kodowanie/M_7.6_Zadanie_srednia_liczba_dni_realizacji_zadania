@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="porfolio.BoarTestSuiteTask" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-09-16T23:01:11" hostname="DESKTOP-DKN2RU7" time="0.03">
+  <properties/>
+  <testcase name="testAddTaskListAverageWorkingOnTask()" classname="porfolio.BoarTestSuiteTask" time="0.03"/>
+  <system-out><![CDATA[Print list of task creation date: [2023-09-17, 2023-09-07, 2023-08-28]
+Calculate sum of days from creation has passed: 10.0
+Calculate the numbers of Tasks: 3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

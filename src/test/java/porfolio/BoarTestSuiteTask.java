@@ -96,7 +96,7 @@ public class BoarTestSuiteTask {
         //task5: -20 days
         //task4: -10 days
         //task2: 0 days
-        //average: 10 dni
+        //average: 10 days
         List list = project.getTaskLists().stream()
                 .filter(tl -> taskInProgress.contains(tl))
                 .flatMap(tl -> tl.getTasks().stream())
@@ -108,14 +108,13 @@ public class BoarTestSuiteTask {
         double averageNumberOfDayPerTasks = project.getTaskLists().stream()
                 .filter(tl -> taskInProgress.contains(tl))
                 .flatMap(tl -> tl.getTasks().stream())
-                //LocalData: created - deadline
+                //LocalData: difference between CREATED and CURRENT DAY
                 .map(t -> Period.between(t.getCreated(),LocalDate.now()))
-                .mapToLong(Period::getDays)
+                .mapToDouble(Period::getDays)
                 .average().getAsDouble();
 
         System.out.println("Calculate sum of days from creation has passed: " +
                 averageNumberOfDayPerTasks);
-
 
         long numbersOfTasks = project.getTaskLists().stream()
                 .filter(tl -> taskInProgress.contains(tl))
@@ -124,9 +123,7 @@ public class BoarTestSuiteTask {
 
         System.out.println("Calculate the numbers of Tasks: " + numbersOfTasks);
 
-
         //Then
-
         Assertions.assertEquals(10,averageNumberOfDayPerTasks);
 
 
